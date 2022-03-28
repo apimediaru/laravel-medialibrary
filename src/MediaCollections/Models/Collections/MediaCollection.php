@@ -50,6 +50,7 @@ class MediaCollection extends Collection implements Htmlable
                 'custom_properties' => $media->custom_properties,
                 'extension' => $media->extension,
                 'size' => $media->size,
+                'hash' => $media->hash,
             ];
         })->keyBy('uuid')));
     }

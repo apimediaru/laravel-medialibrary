@@ -252,6 +252,7 @@ class FileAdder
 
         $media->mime_type = $storage->mimeType($this->pathToFile);
         $media->size = $storage->size($this->pathToFile);
+        $media->hash = md5_file($this->pathToFile);
         $media->custom_properties = $this->customProperties;
 
         $media->generated_conversions = [];
@@ -310,6 +311,7 @@ class FileAdder
 
         $media->mime_type = File::getMimeType($this->pathToFile);
         $media->size = filesize($this->pathToFile);
+        $media->hash = md5_file($this->pathToFile);
 
         if (! is_null($this->order)) {
             $media->order_column = $this->order;
